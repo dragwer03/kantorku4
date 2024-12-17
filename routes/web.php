@@ -21,16 +21,17 @@ Route::post('dasboard_admin', function () {
 {
     return view('dasboard_admin');
 }else
-    return view('login'); // Display the signup form
+    return view('login');
 })->name('dasboard_admine');
 
 
 Route::get('/dasboard_admin', function () {
- if($_POST['username'] == 'admin' && $_POST['password'] == 'admin')  
+
+ if($_GET['username'] == 'admin' && $_GET['password'] == 'admin' )  
  { 
-    return view('dasboard_admin'); // Display the signup form
-}else 
-return view('login');
+    return view('dasboard_admin'); 
+}else {
+return view('login');}
 })->name('dasboard_admin');
 
 // Login Page
