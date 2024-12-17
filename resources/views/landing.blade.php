@@ -398,7 +398,7 @@
             <h2 class="display-6 fw-bold text-primary mb-4 juduaatas" >Attendance System</h2>
             <p class="lead text-muted mb-5 juduaatas">52.589.+ Startup & Companies Using our Software</p>
             <div class="d-flex justify-content-center gap-3 ">
-                <a href=""{{ route('signup') }}" class="btn btn-primary btn-lg">Sign Up</a>
+                <a href="{{ route('signup') }}" class="btn btn-primary btn-lg">Sign Up</a>
                 <a href="{{ route('login') }}" class="btn  btn-lg">
     <i class="bi bi-play-circle me-2"></i>
     See How it work

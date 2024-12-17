@@ -204,8 +204,11 @@
                 <div class="card border-0 shadow-sm">
                     <div class="card-body">
                         <div class="d-flex justify-content-between mb-3">
-                            <input type="text" id="search" class="form-control" placeholder="Search Here">
+                            <input type="text" id="search" class="form-control" placeholder="Search Here"><button id="addNew" class="btn btn-success">
+                              <i class="fa fa-plus"></i> New
+                            </button>
                         </div>
+                       
                         <table class="table align-middle">
                             <thead>
                                 <tr>
@@ -329,6 +332,27 @@
             });
         });
 
+
+        let idCounter = 2; // Incrementing ID for new entries
+
+// Add New Row
+$("#addNew").click(function () {
+  let newRow = `
+    <tr>
+      <td>${idCounter}</td>
+      <td>
+        <img src="img/user.jpeg" class="employee-img me-2" alt="Avatar">
+        Employee ${idCounter}
+      </td>
+      <td>Rp 30.000</td>
+      <td><span class="badge bg-secondary">Staff</span></td>
+      <td>
+       <i class="fa fa-trash icon-delete" onclick="deleteRow(this)">
+      </td>
+    </tr>`;
+  $("#salaryTable").append(newRow);
+  idCounter++;
+});
         // Delete Row Functionality
         function deleteRow(icon) {
             $(icon).closest("tr").remove();
