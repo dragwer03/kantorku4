@@ -16,10 +16,30 @@ Route::get('/signup', function () {
 // Handle Sign Up Form Submission
 Route::post('/signup', [AuthController::class, 'store'])->name('signup.store');
 
+Route::post('dasboard_admin', function () {
+    if($_POST['username'] == 'admin' && $_POST['password'] == 'admin')
+{
+    return view('dasboard_admin');
+}else
+    return view('login'); // Display the signup form
+})->name('dasboard_admine');
+
+
+Route::get('/dasboard_admin', function () {
+ if($_POST['username'] == 'admin' && $_POST['password'] == 'admin')  
+ { 
+    return view('dasboard_admin'); // Display the signup form
+}else 
+return view('login');
+})->name('dasboard_admin');
+
 // Login Page
 Route::get('/login', function () {
     return view('login'); // Display the login form
 })->name('login');
+
+
+
 
 // Handle Login Form Submission
 Route::post('/login', [AuthController::class, 'authenticate'])->name('login.authenticate');
@@ -31,3 +51,4 @@ Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 Route::get('/dashboard', function () {
     return view('dashboard'); // Dashboard view
 })->middleware('auth')->name('dashboard');
+

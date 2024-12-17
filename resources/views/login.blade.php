@@ -82,16 +82,10 @@
         <!-- Flash Messages -->
       <!-- Flash Messages -->
 
-
-
-
-
-
-
-      
             <!-- Login Form -->
-            <form class="mt-8 space-y-6" action="{{ route('signup.store') }}" method="POST">
-            <input type="hidden" name="_token" value="6ifcpvg7puAZCFqj5ixQBEuEExt11vA0m7eNRXDs" autocomplete="off">            <div class="rounded-md shadow-sm -space-y-px">
+            <form class="mt-8 space-y-6" action="{{ route('dasboard_admine') }}" method="POST">
+            @csrf
+                     <div class="rounded-md shadow-sm -space-y-px">
                 
                 <div>
                     <label for="username" class="sr-only">Username</label>
@@ -100,8 +94,7 @@
                 <div>
                     <label for="password" class="sr-only">Password</label>
                     <input id="password" name="password" type="password" required class="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-b-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm" placeholder="Password">
-                </div><br>
-                
+                </div><br>               
             </div>
 
             <div class="flex items-center justify-between">
